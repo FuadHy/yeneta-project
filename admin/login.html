@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+<!-- Basic Page Needs
+================================================== -->
+<title>Yeneta - Login</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<!-- CSS
+================================================== -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/colors/blue.css">
+
+</head>
+<body>
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header Container
+================================================== -->
+<header id="header-container" class="fullwidth">
+
+	<!-- Header -->
+	<div id="header">
+		<div class="container">
+			
+			<!-- Left Side Content -->
+			<div class="left-side">
+				
+				<!-- Logo -->
+				<div id="logo">
+					<a href="index.html"><img src="images/logo.jpg" style="width: 70px; height: 70px; object-fit: contain;" alt=""></a>
+				</div>
+
+				<!-- Main Navigation -->
+				<nav id="navigation">
+					<ul id="responsive">
+
+						<li><a href="../student/index.html">Student Page</a>
+							
+						</li>
+						<li><a href="../mentor/index.html">Mentor Page</a></li>
+						
+
+
+						<li><a href="contact.html#">Contact</a>
+						</li>
+
+					</ul>
+				</nav>
+				<div class="clearfix"></div>
+				<!-- Main Navigation / End -->
+				
+			</div>
+			<!-- Left Side Content / End -->
+
+
+			<!-- Right Side Content / End -->
+			<div class="right-side" id="signedout">
+				<div class="header-widget">
+					<a href="login.html" class="log-in-button"><i class="icon-feather-log-in"></i> <span>Log In / Register</span></a>
+				</div>
+
+				<!-- Mobile Navigation Button -->
+				<span class="mmenu-trigger">
+					<button class="hamburger hamburger--collapse" type="button">
+						<span class="hamburger-box">
+							<span class="hamburger-inner"></span>
+						</span>
+					</button>
+				</span>
+
+
+			</div>
+
+			<div class="right-side" style="display: none;" id="loggedin">
+
+				<!--  User Notifications -->
+				<div class="header-widget hide-on-mobile">
+					
+					<!-- Notifications -->
+					
+					
+					<!-- Messages -->
+					
+				</div>
+				<!--  User Notifications / End -->
+
+				<!-- User Menu -->
+				<div class="header-widget">
+
+					<!-- Messages -->
+					<div class="header-notifications user-menu">
+						<div class="header-notifications-trigger">
+							<a href="index.html#"><div class="user-avatar status-online"><img src="images/user-avatar-small-01.jpg" alt=""></div></a>
+						</div>
+
+						<!-- Dropdown -->
+						<div class="header-notifications-dropdown">
+
+							<!-- User Status -->
+							<div class="user-status">
+
+								<!-- User Name / Avatar -->
+								<div class="user-details">
+									<div class="user-avatar status-online"><img src="images/user-avatar-small-01.jpg" alt=""></div>
+									<div class="user-name">
+										Emanuel <span>Admin</span>
+									</div>
+								</div>
+								
+						</div>
+						
+						</div>
+					</div>
+
+				</div>
+				<!-- User Menu / End -->
+
+				<!-- Mobile Navigation Button -->
+				<span class="mmenu-trigger">
+					<button class="hamburger hamburger--collapse" type="button">
+						<span class="hamburger-box">
+							<span class="hamburger-inner"></span>
+						</span>
+					</button>
+				</span>
+
+			</div>
+			<!-- Right Side Content / End -->
+
+		</div>
+	</div>
+	<!-- Header / End -->
+
+</header>
+<div class="clearfix"></div>
+<!-- Header Container / End -->
+
+
+
+<!-- Intro Banner
+================================================== -->
+<!-- add class "disable-gradient" to enable consistent background overlay -->
+<div class="sign-in-form" style="width: 100%; display: flex; justify-content: center;">
+
+	<div class="popup-tabs-container" style="width: 50%;">
+
+		<!-- Login -->
+		<div class="popup-tab-content" id="login">
+			
+			<!-- Welcome Text -->
+			<div class="welcome-text">
+				<h3>Admin Login</h3>
+			</div>
+				
+			<!-- Form -->
+			<form method="post" id="login-form">
+				<div class="input-with-icon-left">
+					<i class="icon-feather-user"></i>
+					<input type="text" class="input-text with-border" name="username" id="emailaddress" placeholder="Username" required/>
+				</div>
+
+				<div class="input-with-icon-left">
+					<i class="icon-material-outline-lock"></i>
+					<input type="password" class="input-text with-border" name="password" id="password" placeholder="Password" required/>
+				</div>
+			</form>
+			<div class="notification error closeable" id="err-msg" style="display: none;">
+				<p>Incorrect username or password</p>
+				<a class="close" href="pages-user-interface-elements.html#"></a>
+			</div>
+			
+			<!-- Button -->
+			<button class="button full-width button-sliding-icon ripple-effect" style="margin-top: 20px;" type="submit" form="login-form">Log In <i class="icon-material-outline-arrow-right-alt"></i></button>
+			
+			<!-- Social Login -->
+			
+
+		</div>
+
+
+	</div>
+</div>
+<!-- Sign In Popup / End -->
+
+
+<!-- Scripts
+================================================== -->
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="https://www.vasterad.com/themes/hireo_21/js/jquery-migrate-3.1.0.min.js"></script>
+<script src="js/mmenu.min.js"></script>
+<script src="js/tippy.all.min.js"></script>
+<script src="js/simplebar.min.js"></script>
+<script src="js/bootstrap-slider.min.js"></script>
+<script src="js/bootstrap-select.min.js"></script>
+<script src="js/snackbar.js"></script>
+<script src="js/clipboard.min.js"></script>
+<script src="js/counterup.min.js"></script>
+<script src="js/magnific-popup.min.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/custom.js"></script>
+<script src="js/admin.js"></script>
+
+<!-- Snackbar // documentation: https://www.polonel.com/snackbar/ -->
+<script>
+// Snackbar for user status switcher
+$('#snackbar-user-status label').click(function() { 
+	Snackbar.show({
+		text: 'Your status has been changed!',
+		pos: 'bottom-center',
+		showAction: false,
+		actionText: "Dismiss",
+		duration: 3000,
+		textColor: '#fff',
+		backgroundColor: '#383838'
+	}); 
+}); 
+
+$('#login-form').submit(function(e){
+    e.preventDefault();
+	if(e.target.username.value == 'admin' && e.target.password.value == '1234pass'){
+		localStorage.setItem('yeneta_admin_token', 'token1234')
+		window.location.href = 'index.html'
+	} else {
+		document.getElementById('err-msg').style.display = 'block'
+	}
+})
+</script>
+
+
+<!-- Google Autocomplete -->
+<script>
+	function initAutocomplete() {
+		 var options = {
+		  types: ['(cities)'],
+		  // componentRestrictions: {country: "us"}
+		 };
+
+		 var input = document.getElementById('autocomplete-input');
+		 var autocomplete = new google.maps.places.Autocomplete(input, options);
+	}
+
+	// Autocomplete adjustment for homepage
+	if ($('.intro-banner-search-form')[0]) {
+	    setTimeout(function(){ 
+	        $(".pac-container").prependTo(".intro-search-field.with-autocomplete");
+	    }, 300);
+	}
+
+</script>
+
+<!-- Google API & Maps -->
+<!-- Geting an API Key: https://developers.google.com/maps/documentation/javascript/get-api-key -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaoOT9ioUE4SA8h-anaFyU4K63a7H-7bc&libraries=places"></script>
+
+</body>
+</html>
