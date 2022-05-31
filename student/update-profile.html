@@ -4,7 +4,7 @@
 
 <!-- Basic Page Needs
 ================================================== -->
-<title>Yeneta - Login</title>
+<title>Yeneta - Update profile</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -38,15 +38,19 @@
 				<!-- Main Navigation -->
 				<nav id="navigation">
 					<ul id="responsive">
+						<!-- <li><a href="tutors.html">Find Tutor</a>
+							
+						</li> -->
 
-						<li><a href="tutors.html">Find Tutors</a>
+						<li><a href="tutees.html">Find Tutee</a>
 							
 						</li>
+						<li><a href="post-form.html">Post a work</a></li>
 						<li><a href="messages.html">Messages</a></li>
 						
 
 						<li><a href="contact.html#">Contact</a>
-
+						</li>
 
 					</ul>
 				</nav>
@@ -81,7 +85,72 @@
 				<div class="header-widget hide-on-mobile">
 					
 					<!-- Notifications -->
-					
+					<div class="header-notifications">
+
+						<!-- Trigger -->
+						<div class="header-notifications-trigger">
+							<a href="index.html#"><i class="icon-feather-bell"></i><span>4</span></a>
+						</div>
+
+						<!-- Dropdown -->
+						<div class="header-notifications-dropdown">
+
+							<div class="header-notifications-headline">
+								<h4>Notifications</h4>
+								<button class="mark-as-read ripple-effect-dark" title="Mark all as read" data-tippy-placement="left">
+									<i class="icon-feather-check-square"></i>
+								</button>
+							</div>
+
+							<div class="header-notifications-content">
+								<div class="header-notifications-scroll" data-simplebar>
+									<ul>
+										<!-- Notification -->
+										<li class="notifications-not-read">
+											<a href="profile.html">
+												<span class="notification-icon"><i class="icon-material-outline-group"></i></span>
+												<span class="notification-text">
+													<strong>Michael Shannah</strong> applied for a job <span class="color">Full Stack Software Engineer</span>
+												</span>
+											</a>
+										</li>
+
+										<!-- Notification -->
+										<li>
+											<a href="profile.html">
+												<span class="notification-icon"><i class=" icon-material-outline-gavel"></i></span>
+												<span class="notification-text">
+													<strong>Gilbert Allanis</strong> placed a bid on your <span class="color">iOS App Development</span> project
+												</span>
+											</a>
+										</li>
+
+										<!-- Notification -->
+										<li>
+											<a href="profile.html">
+												<span class="notification-icon"><i class="icon-material-outline-autorenew"></i></span>
+												<span class="notification-text">
+													Your job listing <span class="color">Full Stack PHP Developer</span> is expiring.
+												</span>
+											</a>
+										</li>
+
+										<!-- Notification -->
+										<li>
+											<a href="profile.html">
+												<span class="notification-icon"><i class="icon-material-outline-group"></i></span>
+												<span class="notification-text">
+													<strong>Sindy Forrest</strong> applied for a job <span class="color">Full Stack Software Engineer</span>
+												</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
 					
 					<!-- Messages -->
 					<div class="header-notifications">
@@ -167,7 +236,7 @@
 								<div class="user-details">
 									<div class="user-avatar status-online"><img src="images/user-avatar-small-01.jpg" alt=""></div>
 									<div class="user-name">
-										Emanuel <span>Mentor</span>
+										Emanuel <span>Student</span>
 									</div>
 								</div>
 								
@@ -213,42 +282,97 @@
 
 	<div class="popup-tabs-container" style="width: 50%;">
 
-		<!-- Login -->
-		<div class="popup-tab-content" id="login">
+		<!-- Register -->
+		<div class="popup-tab-content" id="register">
 			
 			<!-- Welcome Text -->
 			<div class="welcome-text">
-				<h3>Mentor Login</h3>
-				<span>Don't have an account? <a href="signup.html" class="">Sign Up!</a></span>
+				<h3>Update Profile</h3>
+			</div>
+
+			<!-- Account Type -->
+			<div class="account-type">
+
+				<div>
+					<input type="radio" name="account-type-radio" value="tutor" id="employer-radio" class="account-type-radio" checked/>
+					<label for="employer-radio" class="ripple-effect-dark"><i class="icon-material-outline-business-center"></i> Student</label>
+				</div>
 			</div>
 				
 			<!-- Form -->
-			<form method="post" id="login-form">
+			<form method="post" id="register-account-form">
 				<div class="input-with-icon-left">
 					<i class="icon-feather-user"></i>
-					<input type="text" class="input-text with-border" name="username" id="emailaddress" placeholder="Username" required/>
+					<input type="text" class="input-text with-border" name="" id="" value="Amanuel" placeholder="First name" required/>
+				</div>
+
+				<div class="input-with-icon-left">
+					<i class="icon-feather-user"></i>
+					<input type="text" class="input-text with-border" name="" id="" value="Abebe" placeholder="Middle name" required/>
+				</div>
+                
+                <div class="input-with-icon-left">
+					<i class="icon-feather-user"></i>
+					<input type="text" class="input-text with-border" name="" id="" value="Feleke" placeholder="Last name" required/>
+				</div>
+
+				<div class="input-with-icon-left">
+					<i class="icon-feather-calendar"></i>
+					<input type="text" class="input-text with-border" name="" id="" placeholder="Date of birth" required/>
+				</div>
+
+				<div class="input-with-icon-left">
+					<i class="icon-feather-phone"></i>
+					<input type="number" class="input-text with-border" name="" id="" placeholder="Phone no." required/>
+				</div>
+
+                <div class="input-with-icon-left">
+					<i class="icon-material-baseline-mail-outline"></i>
+					<input type="text" class="input-text with-border" name="" id="" placeholder="Email Address" required/>
+				</div>
+
+                <div class="input-with-icon-left" style="margin-bottom: 15px;">
+                        <span>Education level:</span>
+                        <select class="selectpicker hide-tick">
+                            <option>Highscool</option>
+                            <option>Undergraduate</option>
+                            <option>Masters</option>
+                            <option>PHD</option>
+                        </select>
+				</div>
+
+				<div class="input-with-icon-left">
+					<textarea rows="5" cols="7" type="number" class="input-text with-border" name="" id="" placeholder="Description" required></textarea>
+				</div>
+
+				<div class="" id="cv">
+					<i class="icon-feather-file-text"></i> <span>Profile photo</span>
+					<input type="file" class="input-text with-border" name="" id="" placeholder="Upload cv/resume"/>
+				</div>
+
+				<div class="input-with-icon-left" title="Should be at least 8 characters long" data-tippy-placement="bottom">
+					<i class="icon-material-outline-lock"></i>
+					<input type="password" class="input-text with-border" name="password-register" id="password-register" placeholder="Password" required/>
 				</div>
 
 				<div class="input-with-icon-left">
 					<i class="icon-material-outline-lock"></i>
-					<input type="password" class="input-text with-border" name="password" id="password" placeholder="Password" required/>
+					<input type="password" class="input-text with-border" name="password-repeat-register" id="password-repeat-register" placeholder="Confirm Password" required/>
 				</div>
-				<div class="notification error closeable" id="err-msg" style="display: none;">
-					<p>Incorrect username or password</p>
-					<a class="close" href="pages-user-interface-elements.html#"></a>
-				</div>
-				
-				<a href="#" class="forgot-password">Forgot Password?</a>
+                <button class="margin-top-10 button full-width button-sliding-icon ripple-effect" type="submit">Register <i class="icon-material-outline-arrow-right-alt"></i></button>
 			</form>
 			
 			<!-- Button -->
-			<button class="button full-width button-sliding-icon ripple-effect" style="margin-top: 20px;" type="submit" form="login-form">Log In <i class="icon-material-outline-arrow-right-alt"></i></button>
+			
 			
 			<!-- Social Login -->
-			
+			<!-- <div class="social-login-separator"><span>or</span></div>
+			<div class="social-login-buttons">
+				<button class="facebook-login ripple-effect"><i class="icon-brand-facebook-f"></i> Register via Facebook</button>
+				<button class="google-login ripple-effect"><i class="icon-brand-google-plus-g"></i> Register via Google+</button>
+			</div> -->
 
 		</div>
-
 
 	</div>
 </div>
@@ -287,14 +411,9 @@ $('#snackbar-user-status label').click(function() {
 	}); 
 }); 
 
-$('#login-form').submit(function(e){
+$('#register-account-form').submit(function(e){
     e.preventDefault();
-	if(e.target.username.value == 'mentor' && e.target.password.value == '1234pass'){
-		localStorage.setItem('yeneta_token', 'token1234')
-		window.location.href = 'index.html'
-	} else {
-		document.getElementById('err-msg').style.display = 'block'
-	}
+    window.location.href = 'login.html'
 })
 </script>
 
@@ -317,6 +436,18 @@ $('#login-form').submit(function(e){
 	        $(".pac-container").prependTo(".intro-search-field.with-autocomplete");
 	    }, 300);
 	}
+
+    $('.account-type-radio').each(function(ind, el){
+        el.onclick = function(e){
+            let target = e.target.value,
+            file = document.getElementById('cv')
+            if(target == 'tutor'){
+                file.style.display = 'block'
+            } else {
+                file.style.display = 'none'
+            }
+        }
+    })
 
 </script>
 

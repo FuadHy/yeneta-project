@@ -4,7 +4,7 @@
 
 <!-- Basic Page Needs
 ================================================== -->
-<title>Yeneta - Login</title>
+<title>Yeneta - Update profile</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -46,7 +46,6 @@
 						
 
 						<li><a href="contact.html#">Contact</a>
-
 
 					</ul>
 				</nav>
@@ -213,42 +212,113 @@
 
 	<div class="popup-tabs-container" style="width: 50%;">
 
-		<!-- Login -->
-		<div class="popup-tab-content" id="login">
+		<!-- Register -->
+		<div class="popup-tab-content" id="register">
 			
 			<!-- Welcome Text -->
 			<div class="welcome-text">
-				<h3>Mentor Login</h3>
-				<span>Don't have an account? <a href="signup.html" class="">Sign Up!</a></span>
+				<h3>Update Profile</h3>
+			</div>
+
+			<!-- Account Type -->
+			<div class="account-type">
+
+				<div>
+					<input type="radio" name="account-type-radio" value="tutor" id="employer-radio" class="account-type-radio" checked/>
+					<label for="employer-radio" class="ripple-effect-dark"><i class="icon-material-outline-business-center"></i> Mentor</label>
+				</div>
 			</div>
 				
 			<!-- Form -->
-			<form method="post" id="login-form">
+			<form method="post" id="register-account-form">
 				<div class="input-with-icon-left">
 					<i class="icon-feather-user"></i>
-					<input type="text" class="input-text with-border" name="username" id="emailaddress" placeholder="Username" required/>
+					<input type="text" class="input-text with-border" name="" id="" placeholder="First name" value="Amanuel" required/>
+				</div>
+                
+                <div class="input-with-icon-left">
+					<i class="icon-feather-user"></i>
+					<input type="text" class="input-text with-border" value="Afro" name="" id="" placeholder="Last name" required/>
+				</div>
+
+				<div class="input-with-icon-left">
+					<i class="icon-feather-calendar"></i>
+					<input type="text" class="input-text with-border" name="" id="" placeholder="Date of birth" required/>
+				</div>
+
+				<div class="input-with-icon-left">
+					<i class="icon-feather-phone"></i>
+					<input type="number" class="input-text with-border" name="" id="" placeholder="Phone no." required/>
+				</div>
+
+				<div class="input-with-icon-left">
+					<i class="icon-material-outline-monetization-on"></i>
+					<input type="text" class="input-text with-border" name="" id="" placeholder="Estimated price" required/>
+				</div>
+
+                <div class="input-with-icon-left">
+					<i class="icon-material-baseline-mail-outline"></i>
+					<input type="text" class="input-text with-border" name="" id="" placeholder="Email Address" required/>
+				</div>
+
+                <div class="input-with-icon-left" style="margin-bottom: 15px;">
+                        <span>Education level:</span>
+                        <select class="selectpicker hide-tick">
+                            <option>Highscool</option>
+                            <option>Undergraduate</option>
+                            <option>Masters</option>
+                            <option>PHD</option>
+                        </select>
+				</div>
+
+				<div class="input-with-icon-left">
+					<div class="submit-field">
+						<h5>Experience</h5>
+						<select class="selectpicker with-border" data-size="7" title="Select Experience">
+							<option>Intermidiate</option>
+							<option>Expert</option>
+							<option>World class</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="input-with-icon-left">
+					<textarea rows="5" cols="7" type="number" class="input-text with-border" name="" id="" placeholder="Description" required></textarea>
+				</div>
+
+				<div class="" id="cv">
+					<i class="icon-feather-file-text"></i> <span>Profile photo</span>
+					<input type="file" class="input-text with-border" name="" id="" placeholder="Upload cv/resume"/>
+				</div>
+
+				<div class="" id="cv">
+					<i class="icon-feather-file-text"></i> <span>CV/Resume</span>
+					<input type="file" class="input-text with-border" name="" id="" placeholder="Upload cv/resume"/>
+				</div>
+
+				<div class="input-with-icon-left" title="Should be at least 8 characters long" data-tippy-placement="bottom">
+					<i class="icon-material-outline-lock"></i>
+					<input type="password" class="input-text with-border" name="password-register" id="password-register" placeholder="Password" required/>
 				</div>
 
 				<div class="input-with-icon-left">
 					<i class="icon-material-outline-lock"></i>
-					<input type="password" class="input-text with-border" name="password" id="password" placeholder="Password" required/>
+					<input type="password" class="input-text with-border" name="password-repeat-register" id="password-repeat-register" placeholder="Confirm Password" required/>
 				</div>
-				<div class="notification error closeable" id="err-msg" style="display: none;">
-					<p>Incorrect username or password</p>
-					<a class="close" href="pages-user-interface-elements.html#"></a>
-				</div>
-				
-				<a href="#" class="forgot-password">Forgot Password?</a>
+                <button class="margin-top-10 button full-width button-sliding-icon ripple-effect" type="submit">Register <i class="icon-material-outline-arrow-right-alt"></i></button>
 			</form>
 			
 			<!-- Button -->
-			<button class="button full-width button-sliding-icon ripple-effect" style="margin-top: 20px;" type="submit" form="login-form">Log In <i class="icon-material-outline-arrow-right-alt"></i></button>
+			
 			
 			<!-- Social Login -->
-			
+			<!-- <div class="social-login-separator"><span>or</span></div>
+			<div class="social-login-buttons">
+				<button class="facebook-login ripple-effect"><i class="icon-brand-facebook-f"></i> Register via Facebook</button>
+				<button class="google-login ripple-effect"><i class="icon-brand-google-plus-g"></i> Register via Google+</button>
+			</div> -->
 
 		</div>
-
 
 	</div>
 </div>
@@ -287,14 +357,9 @@ $('#snackbar-user-status label').click(function() {
 	}); 
 }); 
 
-$('#login-form').submit(function(e){
+$('#register-account-form').submit(function(e){
     e.preventDefault();
-	if(e.target.username.value == 'mentor' && e.target.password.value == '1234pass'){
-		localStorage.setItem('yeneta_token', 'token1234')
-		window.location.href = 'index.html'
-	} else {
-		document.getElementById('err-msg').style.display = 'block'
-	}
+    window.location.href = 'login.html'
 })
 </script>
 
@@ -317,6 +382,18 @@ $('#login-form').submit(function(e){
 	        $(".pac-container").prependTo(".intro-search-field.with-autocomplete");
 	    }, 300);
 	}
+
+    $('.account-type-radio').each(function(ind, el){
+        el.onclick = function(e){
+            let target = e.target.value,
+            file = document.getElementById('cv')
+            if(target == 'tutor'){
+                file.style.display = 'block'
+            } else {
+                file.style.display = 'none'
+            }
+        }
+    })
 
 </script>
 
