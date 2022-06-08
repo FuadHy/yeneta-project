@@ -89,7 +89,7 @@
 
 						<!-- Trigger -->
 						<div class="header-notifications-trigger">
-							<a href="index.html#"><i class="icon-feather-bell"></i><span>4</span></a>
+							<a href="index.html#"><i class="icon-feather-bell"></i><span></span></a>
 						</div>
 
 						<!-- Dropdown -->
@@ -105,45 +105,7 @@
 							<div class="header-notifications-content">
 								<div class="header-notifications-scroll" data-simplebar>
 									<ul>
-										<!-- Notification -->
-										<li class="notifications-not-read">
-											<a href="profile.html">
-												<span class="notification-icon"><i class="icon-material-outline-group"></i></span>
-												<span class="notification-text">
-													<strong>Michael Shannah</strong> applied for a job <span class="color">Full Stack Software Engineer</span>
-												</span>
-											</a>
-										</li>
-
-										<!-- Notification -->
-										<li>
-											<a href="profile.html">
-												<span class="notification-icon"><i class=" icon-material-outline-gavel"></i></span>
-												<span class="notification-text">
-													<strong>Gilbert Allanis</strong> placed a bid on your <span class="color">iOS App Development</span> project
-												</span>
-											</a>
-										</li>
-
-										<!-- Notification -->
-										<li>
-											<a href="profile.html">
-												<span class="notification-icon"><i class="icon-material-outline-autorenew"></i></span>
-												<span class="notification-text">
-													Your job listing <span class="color">Full Stack PHP Developer</span> is expiring.
-												</span>
-											</a>
-										</li>
-
-										<!-- Notification -->
-										<li>
-											<a href="profile.html">
-												<span class="notification-icon"><i class="icon-material-outline-group"></i></span>
-												<span class="notification-text">
-													<strong>Sindy Forrest</strong> applied for a job <span class="color">Full Stack Software Engineer</span>
-												</span>
-											</a>
-										</li>
+									
 									</ul>
 								</div>
 							</div>
@@ -155,7 +117,7 @@
 					<!-- Messages -->
 					<div class="header-notifications">
 						<div class="header-notifications-trigger">
-							<a href="index.html#"><i class="icon-feather-mail"></i><span>3</span></a>
+							<a href="index.html#"><i class="icon-feather-mail"></i><span></span></a>
 						</div>
 
 						<!-- Dropdown -->
@@ -172,40 +134,7 @@
 								<div class="header-notifications-scroll" data-simplebar>
 									<ul>
 										<!-- Notification -->
-										<li class="notifications-not-read">
-											<a href="messages.html">
-												<span class="notification-avatar status-online"><img src="images/user-avatar-small-03.jpg" alt=""></span>
-												<div class="notification-text">
-													<strong>Abebe man</strong>
-													<p class="notification-msg-text">Thanks for reaching out. I'm quite busy right now on many...</p>
-													<span class="color">4 hours ago</span>
-												</div>
-											</a>
-										</li>
-
-										<!-- Notification -->
-										<li class="notifications-not-read">
-											<a href="messages.html">
-												<span class="notification-avatar status-offline"><img src="images/user-avatar-small-02.jpg" alt=""></span>
-												<div class="notification-text">
-													<strong>Betty Feleke</strong>
-													<p class="notification-msg-text">Hi Tom! Hate to break it to you, but I'm actually on vacation until...</p>
-													<span class="color">Yesterday</span>
-												</div>
-											</a>
-										</li>
-
-										<!-- Notification -->
-										<li class="notifications-not-read">
-											<a href="messages.html">
-												<span class="notification-avatar status-online"><img src="images/user-avatar-placeholder.png" alt=""></span>
-												<div class="notification-text">
-													<strong>Marti ayele</strong>
-													<p class="notification-msg-text">I received payment. Thanks for cooperation!</p>
-													<span class="color">Yesterday</span>
-												</div>
-											</a>
-										</li>
+								
 									</ul>
 								</div>
 							</div>
@@ -303,63 +232,68 @@
 			<form method="post" id="register-account-form">
 				<div class="input-with-icon-left">
 					<i class="icon-feather-user"></i>
-					<input type="text" class="input-text with-border" name="" id="" placeholder="First name" required/>
+					<input type="text" class="input-text with-border" name="fn" id="" placeholder="First name" required/>
 				</div>
 
 				<div class="input-with-icon-left">
 					<i class="icon-feather-user"></i>
-					<input type="text" class="input-text with-border" name="" id="" placeholder="Middle name" required/>
+					<input type="text" class="input-text with-border" name="mn" id="" placeholder="Middle name" required/>
 				</div>
                 
                 <div class="input-with-icon-left">
 					<i class="icon-feather-user"></i>
-					<input type="text" class="input-text with-border" name="" id="" placeholder="Last name" required/>
+					<input type="text" class="input-text with-border" name="ln" id="" placeholder="Last name" required/>
 				</div>
 
 				<div class="input-with-icon-left">
 					<i class="icon-feather-calendar"></i>
-					<input type="text" class="input-text with-border" name="" id="" placeholder="Date of birth" required/>
+					<input type="date" class="input-text with-border" name="dob" id="" placeholder="Date of birth" required/>
 				</div>
 
 				<div class="input-with-icon-left">
 					<i class="icon-feather-phone"></i>
-					<input type="number" class="input-text with-border" name="" id="" placeholder="Phone no." required/>
+					<input type="number" class="input-text with-border" name="ph" id="" placeholder="Phone no." required/>
 				</div>
 
                 <div class="input-with-icon-left">
 					<i class="icon-material-baseline-mail-outline"></i>
-					<input type="text" class="input-text with-border" name="" id="" placeholder="Email Address" required/>
+					<input type="text" class="input-text with-border" name="em" id="" placeholder="Email Address" required/>
 				</div>
 
                 <div class="input-with-icon-left" style="margin-bottom: 15px;">
                         <span>Education level:</span>
-                        <select class="selectpicker hide-tick">
-                            <option>Highscool</option>
-                            <option>Undergraduate</option>
-                            <option>Masters</option>
-                            <option>PHD</option>
+                        <select class="selectpicker hide-tick" name="el">
+                            <option value="1">Highscool</option>
+                            <option value="2">Undergraduate</option>
+                            <option value="3">Masters</option>
+                            <option value="4">PHD</option>
                         </select>
 				</div>
 
 				<div class="input-with-icon-left">
-					<textarea rows="5" cols="7" type="number" class="input-text with-border" name="" id="" placeholder="Description" required></textarea>
+					<textarea rows="5" cols="7" type="number" class="input-text with-border" name="ds" id="" placeholder="Description" required></textarea>
 				</div>
 
 				<div class="" id="cv">
 					<i class="icon-feather-file-text"></i> <span>Profile photo</span>
-					<input type="file" class="input-text with-border" name="" id="" placeholder="Upload cv/resume"/>
+					<input type="file" class="input-text with-border" name="pp" id="" placeholder="Upload cv/resume"/>
 				</div>
 
 				<div class="input-with-icon-left" title="Should be at least 8 characters long" data-tippy-placement="bottom">
 					<i class="icon-material-outline-lock"></i>
-					<input type="password" class="input-text with-border" name="password-register" id="password-register" placeholder="Password" required/>
+					<input type="password" class="input-text with-border" name="ps" id="password-register" placeholder="Password" required/>
 				</div>
 
 				<div class="input-with-icon-left">
 					<i class="icon-material-outline-lock"></i>
-					<input type="password" class="input-text with-border" name="password-repeat-register" id="password-repeat-register" placeholder="Confirm Password" required/>
+					<input type="password" class="input-text with-border" name="pc" id="password-repeat-register" placeholder="Confirm Password" required/>
 				</div>
-                <button class="margin-top-10 button full-width button-sliding-icon ripple-effect" type="submit">Register <i class="icon-material-outline-arrow-right-alt"></i></button>
+
+				<div class="notification error closeable" id="err-msg" style="display: none;">
+					<p id="err-m">Something went wrong!</p>
+					<a class="close" href="#"></a>
+				</div>
+                <button class="margin-top-10 button full-width button-sliding-icon ripple-effect" type="submit" id="l-btn">Register <i class="icon-material-outline-arrow-right-alt"></i></button>
 			</form>
 			
 			<!-- Button -->
@@ -393,7 +327,7 @@
 <script src="js/counterup.min.js"></script>
 <script src="js/magnific-popup.min.js"></script>
 <script src="js/slick.min.js"></script>
-<script src="js/custom.js"></script>
+<script src="js/custom.js?v=4"></script>
 
 <!-- Snackbar // documentation: https://www.polonel.com/snackbar/ -->
 <script>
@@ -412,7 +346,56 @@ $('#snackbar-user-status label').click(function() {
 
 $('#register-account-form').submit(function(e){
     e.preventDefault();
-    window.location.href = 'login.html'
+    //window.location.href = 'login.html'
+	let target = e.target
+	let data = {
+		Student_First_Name: target.fn.value,
+		Student_Middle_Name: target.mn.value,
+		Student_Last_Name: target.ln.value,
+		Phone: target.ph.value,
+		Date_Of_Birth: target.dob.value,
+		Email: target.em.value,
+		Password: target.ps.value,
+		ConfirmPassword: target.pc.value,
+		Grade_level: target.el.value,
+		Description: target.ds.value,	
+	}
+
+	let loader = `
+		<div class="typing-indicator">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	`, btn = document.getElementById('l-btn');
+
+		btn.innerHTML = loader
+		btn.disabled = true
+		btn.style.cursor = 'not-allowed'
+		btn.style.display = 'flex'
+		btn.style.justifyContent = 'center'	
+
+	fetch(window.constants.baseUrl + '/Yeneta/students/signup', {
+		method: 'post',
+		body: JSON.stringify(data),
+		headers: {
+			'Content-Type': 'application/json'
+		}
+	}).then(r => r.json())
+	.then(d => {
+		console.log(d)
+		if(d.status == 'Sucess'){
+			localStorage.setItem('yeneta_token', d.token)
+			window.location.href = 'login.html'
+		} else {
+			btn.disabled = false
+			btn.style.display = 'block'
+			btn.style.cursor = 'pointer'
+			btn.innerHTML = 'Register <i class="icon-material-outline-arrow-right-alt"></i>'
+			document.getElementById('err-msg').style.display = 'block'
+			document.getElementById('err-m').innerText = d.message
+		}
+	}).catch(e => console.log(e));
 })
 </script>
 

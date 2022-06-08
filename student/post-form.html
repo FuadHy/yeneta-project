@@ -89,7 +89,7 @@
 
 						<!-- Trigger -->
 						<div class="header-notifications-trigger">
-							<a href="index.html#"><i class="icon-feather-bell"></i><span>4</span></a>
+							<a href="index.html#"><i class="icon-feather-bell"></i><span></span></a>
 						</div>
 
 						<!-- Dropdown -->
@@ -106,44 +106,7 @@
 								<div class="header-notifications-scroll" data-simplebar>
 									<ul>
 										<!-- Notification -->
-										<li class="notifications-not-read">
-											<a href="profile.html">
-												<span class="notification-icon"><i class="icon-material-outline-group"></i></span>
-												<span class="notification-text">
-													<strong>Michael Shannah</strong> applied for a job <span class="color">Full Stack Software Engineer</span>
-												</span>
-											</a>
-										</li>
-
-										<!-- Notification -->
-										<li>
-											<a href="profile.html">
-												<span class="notification-icon"><i class=" icon-material-outline-gavel"></i></span>
-												<span class="notification-text">
-													<strong>Gilbert Allanis</strong> placed a bid on your <span class="color">iOS App Development</span> project
-												</span>
-											</a>
-										</li>
-
-										<!-- Notification -->
-										<li>
-											<a href="profile.html">
-												<span class="notification-icon"><i class="icon-material-outline-autorenew"></i></span>
-												<span class="notification-text">
-													Your job listing <span class="color">Full Stack PHP Developer</span> is expiring.
-												</span>
-											</a>
-										</li>
-
-										<!-- Notification -->
-										<li>
-											<a href="profile.html">
-												<span class="notification-icon"><i class="icon-material-outline-group"></i></span>
-												<span class="notification-text">
-													<strong>Sindy Forrest</strong> applied for a job <span class="color">Full Stack Software Engineer</span>
-												</span>
-											</a>
-										</li>
+									
 									</ul>
 								</div>
 							</div>
@@ -155,7 +118,7 @@
 					<!-- Messages -->
 					<div class="header-notifications">
 						<div class="header-notifications-trigger">
-							<a href="index.html#"><i class="icon-feather-mail"></i><span>3</span></a>
+							<a href="index.html#"><i class="icon-feather-mail"></i><span></span></a>
 						</div>
 
 						<!-- Dropdown -->
@@ -172,40 +135,7 @@
 								<div class="header-notifications-scroll" data-simplebar>
 									<ul>
 										<!-- Notification -->
-										<li class="notifications-not-read">
-											<a href="messages.html">
-												<span class="notification-avatar status-online"><img src="images/user-avatar-small-03.jpg" alt=""></span>
-												<div class="notification-text">
-													<strong>Abebe man</strong>
-													<p class="notification-msg-text">Thanks for reaching out. I'm quite busy right now on many...</p>
-													<span class="color">4 hours ago</span>
-												</div>
-											</a>
-										</li>
-
-										<!-- Notification -->
-										<li class="notifications-not-read">
-											<a href="messages.html">
-												<span class="notification-avatar status-offline"><img src="images/user-avatar-small-02.jpg" alt=""></span>
-												<div class="notification-text">
-													<strong>Betty Feleke</strong>
-													<p class="notification-msg-text">Hi Tom! Hate to break it to you, but I'm actually on vacation until...</p>
-													<span class="color">Yesterday</span>
-												</div>
-											</a>
-										</li>
-
-										<!-- Notification -->
-										<li class="notifications-not-read">
-											<a href="messages.html">
-												<span class="notification-avatar status-online"><img src="images/user-avatar-placeholder.png" alt=""></span>
-												<div class="notification-text">
-													<strong>Marti ayele</strong>
-													<p class="notification-msg-text">I received payment. Thanks for cooperation!</p>
-													<span class="color">Yesterday</span>
-												</div>
-											</a>
-										</li>
+								
 									</ul>
 								</div>
 							</div>
@@ -236,7 +166,7 @@
 								<div class="user-details">
 									<div class="user-avatar status-online"><img src="images/user-avatar-small-01.jpg" alt=""></div>
 									<div class="user-name">
-										Emanuel <span>Student</span>
+										</q> <span>Student</span>
 									</div>
 								</div>
 								
@@ -305,6 +235,7 @@
 			<div class="row">
 
 				<!-- Dashboard Box -->
+				<form method="post" id="po-form">
 				<div class="col-xl-12">
 					<div class="dashboard-box margin-top-0">
 
@@ -314,23 +245,30 @@
 						</div>
 
 						<div class="content with-padding padding-bottom-10">
+
+							<div class="notification error closeable" id="err-msg" style="display: none;">
+								<p id="msg"></p>
+								<a class="close" href="#"></a>
+							</div>
+							
 							<div class="row">
+								
 
 								<div class="col-xl-4">
 									<div class="submit-field">
 										<h5>Title</h5>
-										<input type="text" class="with-border">
+										<input type="text" placeholder="Work title" name="tl" class="with-border" required>
 									</div>
 								</div>
 
 								<div class="col-xl-4">
 									<div class="submit-field">
 										<h5>Grade Level</h5>
-										<select class="selectpicker with-border" data-size="7" title="Select Grade Level">
-											<option>Highscool</option>
-											<option>Undergraduate</option>
-											<option>Masters</option>
-											<option>PHD</option>
+										<select class="selectpicker with-border" name="gl" data-size="7" title="Select Grade Level" required>
+											<option value="1">Highscool</option>
+											<option value="2">Undergraduate</option>
+											<option value="3">Masters</option>
+											<option value="4">PHD</option>
 										</select>
 									</div>
 								</div>
@@ -338,12 +276,12 @@
 
 								<div class="col-xl-4">
 									<div class="submit-field">
-										<h5>Subjects</h5>
-										<select class="selectpicker with-border" multiple>
+										<h5>Subject</h5>
+										<select class="selectpicker with-border" name="sj" data-size="7" title="Select Subject" required>
 											<option>Mathematics</option>
-												<option>Biology</option>
-												<option>Geography</option>
-												<option>Chemistry</option>
+											<option>Biology</option>
+											<option>Geography</option>
+											<option>Chemistry</option>
 										</select>
 									</div>
 								</div>
@@ -353,7 +291,7 @@
 										<h5>Location</h5>
 										<div class="input-with-icon">
 											<div id="autocomplete-container">
-												<input id="autocomplete-input" class="with-border" type="text" placeholder="Type Address">
+												<input id="autocomplete-input" name="loc" class="with-border" type="text" placeholder="Type Address" required>
 											</div>
 											<i class="icon-material-outline-location-on"></i>
 										</div>
@@ -366,13 +304,13 @@
 										<div class="row">
 											<div class="col-xl-6">
 												<div class="input-with-icon">
-													<input class="with-border" type="text" placeholder="Min">
+													<input class="with-border" name="mn" type="text" placeholder="Min" required>
 													<i class="currency">ETB</i>
 												</div>
 											</div>
 											<div class="col-xl-6">
 												<div class="input-with-icon">
-													<input class="with-border" type="text" placeholder="Max">
+													<input class="with-border" type="text" name="mx" placeholder="Max" required>
 													<i class="currency">ETB</i>
 												</div>
 											</div>
@@ -383,26 +321,18 @@
 								<div class="col-xl-4">
 									<div class="submit-field">
 										<h5>Avaialeble time</h5>
-										<input type="text" class="with-border">
+										<input type="number" name="av" class="with-border" required>
 									</div>
 								</div>
 
 								<div class="col-xl-4">
 									<div class="submit-field">
 										<h5>Experience</h5>
-										<select class="selectpicker with-border" data-size="7" title="Select Experience">
-											<option>Intermidiate</option>
-											<option>Expert</option>
-											<option>World class</option>
+										<select class="selectpicker with-border" name="ex" data-size="7" title="Select Experience" required>
+											<option value="1">Intermidiate</option>
+											<option value="2">Expert</option>
+											<option value="3">World class</option>
 										</select>
-									</div>
-								</div>
-
-								
-								<div class="col-xl-4">
-									<div class="submit-field">
-										<h5>Location</h5>
-										<input type="text" class="with-border">
 									</div>
 								</div>
 					
@@ -413,9 +343,12 @@
 					</div>
 				</div>
 
+				
+
 				<div class="col-xl-12">
-					<a href="tutors.html" class="button ripple-effect big margin-top-30"><i class="icon-feather-plus"></i> Post a Tutor</a>
+					<button id="l-btn" type="submit" class="button ripple-effect big margin-top-30"><i class="icon-feather-plus"></i> Post a Tutor</button>
 				</div>
+			</form>
 
 			</div>
 			<!-- Row / End -->
@@ -478,7 +411,7 @@
 <script src="js/magnific-popup.min.js"></script>
 <script src="js/slick.min.js"></script>
 <script src="js/custom.js"></script>
-<script src="js/student.js"></script>
+<script src="js/student.js?d=3"></script>
 
 <!-- Snackbar // documentation: https://www.polonel.com/snackbar/ -->
 <script>
@@ -498,79 +431,7 @@ $('#snackbar-user-status label').click(function() {
 
 <!-- Chart.js // documentation: http://www.chartjs.org/docs/latest/ -->
 <script src="js/chart.min.js"></script>
-<script>
-	Chart.defaults.global.defaultFontFamily = "Nunito";
-	Chart.defaults.global.defaultFontColor = '#888';
-	Chart.defaults.global.defaultFontSize = '14';
 
-	var ctx = document.getElementById('chart').getContext('2d');
-
-	var chart = new Chart(ctx, {
-		type: 'line',
-
-		// The data for our dataset
-		data: {
-			labels: ["January", "February", "March", "April", "May", "June"],
-			// Information about the dataset
-	   		datasets: [{
-				label: "Views",
-				backgroundColor: 'rgba(42,65,232,0.08)',
-				borderColor: '#2a41e8',
-				borderWidth: "3",
-				data: [196,132,215,362,210,252],
-				pointRadius: 5,
-				pointHoverRadius:5,
-				pointHitRadius: 10,
-				pointBackgroundColor: "#fff",
-				pointHoverBackgroundColor: "#fff",
-				pointBorderWidth: "2",
-			}]
-		},
-
-		// Configuration options
-		options: {
-
-		    layout: {
-		      padding: 10,
-		  	},
-
-			legend: { display: false },
-			title:  { display: false },
-
-			scales: {
-				yAxes: [{
-					scaleLabel: {
-						display: false
-					},
-					gridLines: {
-						 borderDash: [6, 10],
-						 color: "#d8d8d8",
-						 lineWidth: 1,
-	            	},
-				}],
-				xAxes: [{
-					scaleLabel: { display: false },  
-					gridLines:  { display: false },
-				}],
-			},
-
-		    tooltips: {
-		      backgroundColor: '#333',
-		      titleFontSize: 13,
-		      titleFontColor: '#fff',
-		      bodyFontColor: '#fff',
-		      bodyFontSize: 13,
-		      displayColors: false,
-		      xPadding: 10,
-		      yPadding: 10,
-		      intersect: false
-		    }
-		},
-
-
-});
-
-</script>
 
 
 <!-- Google Autocomplete -->
@@ -590,6 +451,65 @@ $('#snackbar-user-status label').click(function() {
 		    }, 300);
 		}
 	}
+
+	$('#po-form').submit(function(e){
+		e.preventDefault();
+		//window.location.href = 'login.html'
+		let target = e.target
+		let data = {
+			Title: target.tl.value,
+			Grade_level: target.gl.value,
+			Minimum_Price: target.mn.value,
+			Maximum_Price: target.mx.value,
+			Subjects: target.sj.value,
+			Available_Time: target.av.value,
+			Experiance: target.ex.value,
+			Location: target.loc.value,
+		}
+	
+		let loader = `
+			<div class="typing-indicator">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		`, btn = document.getElementById('l-btn');
+	
+			btn.innerHTML = loader
+			btn.disabled = true
+			btn.style.cursor = 'not-allowed'
+			btn.style.display = 'flex'
+			btn.style.justifyContent = 'center'	
+			console.log('token', localStorage.getItem('yeneta_token'))
+	
+		fetch(window.constants.baseUrl + '/Yeneta/post_work_students', {
+			method: 'post',
+			body: JSON.stringify(data),
+			headers: {
+				'Content-Type': 'application/json',
+				'Authorization': `Bearer ${localStorage.getItem('yeneta_token')}`
+			}
+		}).then(r => r.json())
+		.then(d => {
+			console.log(d)
+			if(d.status == 'Sucess'){
+				document.getElementById('err-msg').style.display = 'block'
+				document.getElementById('err-msg').classList.replace('error', 'success')
+				document.getElementById('po-form').reset()
+				document.getElementById('msg').innerText = 'Work successfully uploaded!'
+				btn.innerHTML = '<i class="icon-feather-plus"></i> Post a Tutor'
+				btn.style.display = 'block'
+				//window.location.href = 'login.html'
+			} else {
+				btn.disabled = false
+				btn.style.display = 'block'
+				btn.style.cursor = 'pointer'
+				btn.innerHTML = 'Register <i class="icon-material-outline-arrow-right-alt"></i>'
+				document.getElementById('err-msg').style.display = 'block'
+				document.getElementById('msg').innerText = 'Something went wrong!'
+			}
+		}).catch(e => console.log(e));
+	})
 </script>
 
 <!-- Google API & Maps -->

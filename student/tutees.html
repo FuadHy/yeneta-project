@@ -89,7 +89,7 @@
 
 						<!-- Trigger -->
 						<div class="header-notifications-trigger">
-							<a href="index.html#"><i class="icon-feather-bell"></i><span>4</span></a>
+							<a href="index.html#"><i class="icon-feather-bell"></i><span></span></a>
 						</div>
 
 						<!-- Dropdown -->
@@ -106,44 +106,7 @@
 								<div class="header-notifications-scroll" data-simplebar>
 									<ul>
 										<!-- Notification -->
-										<li class="notifications-not-read">
-											<a href="profile.html">
-												<span class="notification-icon"><i class="icon-material-outline-group"></i></span>
-												<span class="notification-text">
-													<strong>Michael Shannah</strong> applied for a job <span class="color">Full Stack Software Engineer</span>
-												</span>
-											</a>
-										</li>
-
-										<!-- Notification -->
-										<li>
-											<a href="profile.html">
-												<span class="notification-icon"><i class=" icon-material-outline-gavel"></i></span>
-												<span class="notification-text">
-													<strong>Gilbert Allanis</strong> placed a bid on your <span class="color">iOS App Development</span> project
-												</span>
-											</a>
-										</li>
-
-										<!-- Notification -->
-										<li>
-											<a href="profile.html">
-												<span class="notification-icon"><i class="icon-material-outline-autorenew"></i></span>
-												<span class="notification-text">
-													Your job listing <span class="color">Full Stack PHP Developer</span> is expiring.
-												</span>
-											</a>
-										</li>
-
-										<!-- Notification -->
-										<li>
-											<a href="profile.html">
-												<span class="notification-icon"><i class="icon-material-outline-group"></i></span>
-												<span class="notification-text">
-													<strong>Sindy Forrest</strong> applied for a job <span class="color">Full Stack Software Engineer</span>
-												</span>
-											</a>
-										</li>
+										
 									</ul>
 								</div>
 							</div>
@@ -155,7 +118,7 @@
 					<!-- Messages -->
 					<div class="header-notifications">
 						<div class="header-notifications-trigger">
-							<a href="index.html#"><i class="icon-feather-mail"></i><span>3</span></a>
+							<a href="index.html#"><i class="icon-feather-mail"></i><span></span></a>
 						</div>
 
 						<!-- Dropdown -->
@@ -171,41 +134,7 @@
 							<div class="header-notifications-content">
 								<div class="header-notifications-scroll" data-simplebar>
 									<ul>
-										<!-- Notification -->
-										<li class="notifications-not-read">
-											<a href="messages.html">
-												<span class="notification-avatar status-online"><img src="images/user-avatar-small-03.jpg" alt=""></span>
-												<div class="notification-text">
-													<strong>Abebe man</strong>
-													<p class="notification-msg-text">Thanks for reaching out. I'm quite busy right now on many...</p>
-													<span class="color">4 hours ago</span>
-												</div>
-											</a>
-										</li>
-
-										<!-- Notification -->
-										<li class="notifications-not-read">
-											<a href="messages.html">
-												<span class="notification-avatar status-offline"><img src="images/user-avatar-small-02.jpg" alt=""></span>
-												<div class="notification-text">
-													<strong>Betty Feleke</strong>
-													<p class="notification-msg-text">Hi Tom! Hate to break it to you, but I'm actually on vacation until...</p>
-													<span class="color">Yesterday</span>
-												</div>
-											</a>
-										</li>
-
-										<!-- Notification -->
-										<li class="notifications-not-read">
-											<a href="messages.html">
-												<span class="notification-avatar status-online"><img src="images/user-avatar-placeholder.png" alt=""></span>
-												<div class="notification-text">
-													<strong>Marti ayele</strong>
-													<p class="notification-msg-text">I received payment. Thanks for cooperation!</p>
-													<span class="color">Yesterday</span>
-												</div>
-											</a>
-										</li>
+									
 									</ul>
 								</div>
 							</div>
@@ -236,7 +165,7 @@
 								<div class="user-details">
 									<div class="user-avatar status-online"><img src="images/user-avatar-small-01.jpg" alt=""></div>
 									<div class="user-name">
-										Emanuel <span>Student</span>
+										 <span>Student</span>
 									</div>
 								</div>
 								
@@ -285,87 +214,26 @@
 			<div class="sidebar-container">
 				
 				<!-- Location -->
-				<div class="sidebar-widget">
-					<h3>Location</h3>
-					<div class="input-with-icon">
-						<div id="autocomplete-container">
-							<input id="autocomplete-input" type="text" placeholder="Location">
-						</div>
-						<i class="icon-material-outline-location-on"></i>
-					</div>
-				</div>
+			
 
 				<!-- Category -->
 				<div class="sidebar-widget">
-					<h3>Category</h3>
-					<select class="selectpicker default" multiple data-selected-text-format="count" data-size="7" title="All Categories" >
-						<option>Mathematics</option>
-						<option>Biology</option>
-						<option>Geography</option>
-						<option>Chemistry</option>
+					<h3>Filter Experience</h3>
+					<select id="lvl" class="selectpicker default" onchange="window.location.assign(`tutees.html?cat=${event.target.value}`);" data-selected-text-format="count" data-size="7" title="All Categories" >
+						<option value="all">All</option>
+						<option value="1">Intermidiate</option>
+						<option value="2">Expert</option>
+						<option value="3">World class</option>
 					</select>
 				</div>
 
-				<!-- Keywords -->
-				<div class="sidebar-widget">
-					<h3>Keywords</h3>
-					<div class="keywords-container">
-						<div class="keyword-input-container">
-							<input type="text" class="keyword-input" placeholder="e.g. subject name"/>
-							<button class="keyword-input-button ripple-effect"><i class="icon-material-outline-add"></i></button>
-						</div>
-						<div class="keywords-list"><!-- keywords go here --></div>
-						<div class="clearfix"></div>
-					</div>
-				</div>
+				
 
 				<!-- Hourly Rate -->
-				<div class="sidebar-widget">
-					<h3>Hourly Rate</h3>
-					<div class="margin-top-55"></div>
-
-					<!-- Range Slider -->
-					<input class="range-slider" type="text" value="" data-slider-currency="$" data-slider-min="10" data-slider-max="250" data-slider-step="5" data-slider-value="[10,250]"/>
-				</div>
+				
 
 				<!-- Tags -->
-				<div class="sidebar-widget">
-					<h3>Skills</h3>
-
-					<div class="tags-container">
-						<div class="tag">
-							<input type="checkbox" id="tag1"/>
-							<label for="tag1">mathematics</label>
-						</div>
-						<div class="tag">
-							<input type="checkbox" id="tag2"/>
-							<label for="tag2">physics</label>
-						</div>
-						<div class="tag">
-							<input type="checkbox" id="tag3"/>
-							<label for="tag3">geography</label>
-						</div>
-						<div class="tag">
-							<input type="checkbox" id="tag4"/>
-							<label for="tag4">chemistry</label>
-						</div>
-						<div class="tag">
-							<input type="checkbox" id="tag5"/>
-							<label for="tag5">art</label>
-						</div>
-					</div>
-					<div class="clearfix"></div>
-
-					<!-- More Skills -->
-					<div class="keywords-container margin-top-20">
-						<div class="keyword-input-container">
-							<input type="text" class="keyword-input" placeholder="add more skills"/>
-							<button class="keyword-input-button ripple-effect"><i class="icon-material-outline-add"></i></button>
-						</div>
-						<div class="keywords-list"><!-- keywords go here --></div>
-						<div class="clearfix"></div>
-					</div>
-				</div>
+				
 				<div class="clearfix"></div>
 
 			</div>
@@ -380,183 +248,17 @@
 
 				<div class="sort-by">
 					<span>Sort by:</span>
-					<select class="selectpicker hide-tick">
-						<option>Relevance</option>
-						<option>Newest</option>
-						<option>Oldest</option>
-						<option>Random</option>
+					<select id="fil" class="selectpicker hide-tick" onchange="window.location.assign(`tutees.html?sort=${event.target.value.toLowerCase()}`);">
+						<option value="newest" >Newest</option>
+						<option value="oldest">Oldest</option>
 					</select>
 				</div>
 			</div>
 			
 			<!-- Freelancers List Container -->
-			<div class="freelancers-container freelancers-list-layout compact-list margin-top-35">
+			<div class="freelancers-container freelancers-list-layout compact-list margin-top-35" id="frs">
 				
 				<!--Freelancer -->
-				<div class="freelancer">
-
-					<!-- Overview -->
-					<div class="freelancer-overview">
-						<div class="freelancer-overview-inner">
-							
-							<!-- Bookmark Icon -->
-							<span class="bookmark-icon"></span>
-							
-							<!-- Avatar -->
-							<div class="freelancer-avatar">
-								<div class="verified-badge"></div>
-								<a href="profile.html"><img src="images/user-avatar-big-01.jpg" alt=""></a>
-							</div>
-
-							<!-- Name -->
-							<div class="freelancer-name">
-								<h4><a href="profile.html">Emanuel Afro </a></h4>
-								<span>Physics teacher</span>
-								<!-- Rating -->
-								<div class="freelancer-rating">
-									<div class="star-rating" data-rating="4.9"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<!-- Details -->
-					<div class="freelancer-details">
-						<div class="freelancer-details-list">
-							<ul>
-								<li>Location <strong><i class="icon-material-outline-location-on"></i> Addis Ababa</strong></li>
-								<li>Rate <strong>$60 / hr</strong></li>
-								<li>Job Success <strong>95%</strong></li>
-							</ul>
-						</div>
-						<a href="profile.html" class="button button-sliding-icon ripple-effect">View Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
-					</div>
-				</div>
-				<!-- Freelancer / End -->
-
-				<!--Freelancer -->
-				<div class="freelancer">
-
-					<!-- Overview -->
-					<div class="freelancer-overview">
-						<div class="freelancer-overview-inner">
-							
-							<!-- Bookmark Icon -->
-							<span class="bookmark-icon"></span>
-							
-							<!-- Avatar -->
-							<div class="freelancer-avatar">
-								<div class="verified-badge"></div>
-								<a href="profile.html"><img src="images/user-avatar-big-01.jpg" alt=""></a>
-							</div>
-
-							<!-- Name -->
-							<div class="freelancer-name">
-
-								<h4><a href="profile.html">Tomas Feleke </a></h4>
-								<span>Chemistry teacher</span>
-								<!-- Rating -->
-								<div class="freelancer-rating">
-									<div class="star-rating" data-rating="4.9"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<!-- Details -->
-					<div class="freelancer-details">
-						<div class="freelancer-details-list">
-							<ul>
-								<li>Location <strong><i class="icon-material-outline-location-on"></i> Addis Ababa</strong></li>
-								<li>Rate <strong>$120 / hr</strong></li>
-								<li>Job Success <strong>95%</strong></li>
-							</ul>
-						</div>
-						<a href="profile.html" class="button button-sliding-icon ripple-effect">View Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
-					</div>
-				</div>
-				<!-- Freelancer / End -->
-
-				<div class="freelancer">
-
-					<!-- Overview -->
-					<div class="freelancer-overview">
-						<div class="freelancer-overview-inner">
-							
-							<!-- Bookmark Icon -->
-							<span class="bookmark-icon"></span>
-							
-							<!-- Avatar -->
-							<div class="freelancer-avatar">
-								<div class="verified-badge"></div>
-								<a href="profile.html"><img src="images/user-avatar-big-01.jpg" alt=""></a>
-							</div>
-
-							<!-- Name -->
-							<div class="freelancer-name">
-								<h4><a href="profile.html">Baye abebe </a></h4>
-								<span>Art teacher</span>
-								<!-- Rating -->
-								<div class="freelancer-rating">
-									<div class="star-rating" data-rating="4.9"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<!-- Details -->
-					<div class="freelancer-details">
-						<div class="freelancer-details-list">
-							<ul>
-								<li>Location <strong><i class="icon-material-outline-location-on"></i> Addis Ababa</strong></li>
-								<li>Rate <strong>$60 / hr</strong></li>
-								<li>Job Success <strong>95%</strong></li>
-							</ul>
-						</div>
-						<a href="profile.html" class="button button-sliding-icon ripple-effect">View Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
-					</div>
-				</div>
-
-				<div class="freelancer">
-
-					<!-- Overview -->
-					<div class="freelancer-overview">
-						<div class="freelancer-overview-inner">
-							
-							<!-- Bookmark Icon -->
-							<span class="bookmark-icon"></span>
-							
-							<!-- Avatar -->
-							<div class="freelancer-avatar">
-								<div class="verified-badge"></div>
-								<a href="profile.html"><img src="images/user-avatar-big-01.jpg" alt=""></a>
-							</div>
-
-							<!-- Name -->
-							<div class="freelancer-name">
-								<h4><a href="profile.html">Yohannes Mulu </a></h4>
-								<span>Geography tutee</span>
-								<!-- Rating -->
-								<div class="freelancer-rating">
-									<div class="star-rating" data-rating="4.9"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<!-- Details -->
-					<div class="freelancer-details">
-						<div class="freelancer-details-list">
-							<ul>
-								<li>Location <strong><i class="icon-material-outline-location-on"></i> Addis Ababa</strong></li>
-								<li>Rate <strong>$60 / hr</strong></li>
-								<li>Job Success <strong>95%</strong></li>
-							</ul>
-						</div>
-						<a href="profile.html" class="button button-sliding-icon ripple-effect">View Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
-					</div>
-				</div>
-
 	
 			</div>
 			<!-- Freelancers Container / End -->
@@ -751,7 +453,7 @@
 <script src="js/magnific-popup.min.js"></script>
 <script src="js/slick.min.js"></script>
 <script src="js/custom.js"></script>
-<script src="js/student.js"></script>
+<script src="js/student.js?d=3"></script>
 
 <!-- Snackbar // documentation: https://www.polonel.com/snackbar/ -->
 <script>
@@ -780,6 +482,73 @@ $('#snackbar-user-status label').click(function() {
 		 var input = document.getElementById('autocomplete-input');
 		 var autocomplete = new google.maps.places.Autocomplete(input, options);
 	}
+
+	window.addEventListener('DOMContentLoaded', function(){
+		const urlParams = new URLSearchParams(window.location.search);
+		const sort = urlParams.get('sort') || 'newest'
+		const cat = urlParams.get('cat') || 'all'
+		fetch(window.constants.baseUrl + '/Yeneta/mentor')
+		.then(d => d.json())
+		.then(resp => {
+			console.log(resp)
+			let co = document.getElementById('frs')
+			let data = resp.data.mentors
+			let ell = document.getElementById('fil')
+			let lvl = document.getElementById('lvl')
+			if(sort == 'newest') {
+				ell.value = "newest"
+				data = data.reverse()
+			} else ell.value = "oldest"
+			if(cat == '1') data = data.filter(d => d.Experiance == "1")
+			if(cat == '2') data = data.filter(d => d.Experiance == "2")
+			if(cat == '3') data = data.filter(d => d.Experiance == "3")
+			lvl.value = isNaN(cat) ? '' : cat
+
+			data.forEach(m => {
+				let f = `
+					<div class="freelancer">
+						<div class="freelancer-overview">
+							<div class="freelancer-overview-inner">
+								
+								<!-- Bookmark Icon -->
+								<span class="bookmark-icon"></span>
+								
+								<!-- Avatar -->
+								<div class="freelancer-avatar">
+									<div class="verified-badge"></div>
+									<a href="profile.html?id=${m._id}"><img src="images/user-avatar-big-01.jpg" alt=""></a>
+								</div>
+
+								<!-- Name -->
+								<div class="freelancer-name">
+									<h4><a href="profile.html">${m.Mentor_First_Name + " " + m.Mentor_Last_Name} </a></h4>
+									<span>${m.Experiance == "1" ? 'Intermidiate' : m.Experiance == "2" ? 'Expert' : 'World class'}</span>
+									<!-- Rating -->
+									<div class="freelancer-rating">
+										<div class="star-rating" data-rating="5"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<!-- Details -->
+						<div class="freelancer-details">
+							<div class="freelancer-details-list">
+								<ul>
+									
+									<li>Rate <strong>$${m.Estimated_Price} / hr</strong></li>
+									<li>Job Success <strong>100%</strong></li>
+								</ul>
+							</div>
+							<a href="profile.html?id=${m._id}" class="button button-sliding-icon ripple-effect">View Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
+						</div>
+					</div>
+					`;
+					co.innerHTML+=f;
+			})
+			
+		}).catch(e => console.log(e))
+	})
 </script>
 
 <!-- Google API & Maps -->

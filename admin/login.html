@@ -107,8 +107,8 @@
 								<!-- User Name / Avatar -->
 								<div class="user-details">
 									<div class="user-avatar status-online"><img src="images/user-avatar-small-01.jpg" alt=""></div>
-									<div class="user-name">
-										Emanuel <span>Admin</span>
+									<div class="user-name" id="user--name">
+									
 									</div>
 								</div>
 								
@@ -161,12 +161,12 @@
 			<form method="post" id="login-form">
 				<div class="input-with-icon-left">
 					<i class="icon-feather-user"></i>
-					<input type="text" class="input-text with-border" name="username" id="emailaddress" placeholder="Username" required/>
+					<input type="text" class="input-text with-border" name="em" id="emailaddress" placeholder="Username" required/>
 				</div>
 
 				<div class="input-with-icon-left">
 					<i class="icon-material-outline-lock"></i>
-					<input type="password" class="input-text with-border" name="password" id="password" placeholder="Password" required/>
+					<input type="password" class="input-text with-border" name="ps" id="password" placeholder="Password" required/>
 				</div>
 			</form>
 			<div class="notification error closeable" id="err-msg" style="display: none;">
@@ -175,7 +175,7 @@
 			</div>
 			
 			<!-- Button -->
-			<button class="button full-width button-sliding-icon ripple-effect" style="margin-top: 20px;" type="submit" form="login-form">Log In <i class="icon-material-outline-arrow-right-alt"></i></button>
+			<button class="button full-width button-sliding-icon ripple-effect" style="margin-top: 20px;" id="l-btn" type="submit" form="login-form">Log In <i class="icon-material-outline-arrow-right-alt"></i></button>
 			
 			<!-- Social Login -->
 			
@@ -222,12 +222,49 @@ $('#snackbar-user-status label').click(function() {
 
 $('#login-form').submit(function(e){
     e.preventDefault();
-	if(e.target.username.value == 'admin' && e.target.password.value == '1234pass'){
-		localStorage.setItem('yeneta_admin_token', 'token1234')
-		window.location.href = 'index.html'
-	} else {
-		document.getElementById('err-msg').style.display = 'block'
+	let target = e.target;
+	let loader = `
+		<div class="typing-indicator">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	`, btn = document.getElementById('l-btn');
+
+	btn.innerHTML = loader
+	btn.disabled = true
+	btn.style.cursor = 'not-allowed'
+	btn.style.display = 'flex'
+	btn.style.justifyContent = 'center'
+
+	let data = {
+		Email: target.em.value,
+		Password: target.ps.value
 	}
+
+	fetch(window.constants.baseUrl + '/Yeneta/admin/login', {
+		method: 'post',
+		body: JSON.stringify(data),
+		headers: {
+			'Content-Type': 'application/json'
+		}
+	}).then(r => r.json())
+	.then(d => {
+		console.log(d)
+		if(d.status == 'Sucess'){
+			localStorage.setItem('yeneta_admin_token', d.token)
+			localStorage.setItem('yeneta_admin', JSON.stringify(d.admin))
+			window.location.href = 'index.html'
+		} else {
+			btn.disabled = false
+			btn.style.display = 'block'
+			btn.style.cursor = 'pointer'
+			btn.innerHTML = 'Log In <i class="icon-material-outline-arrow-right-alt"></i>'
+			document.getElementById('err-msg').style.display = 'block'
+		}
+	}).catch(e => console.log(e));
+	
+	
 })
 </script>
 

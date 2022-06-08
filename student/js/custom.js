@@ -1,4 +1,8 @@
 /* ----------------- Start Document ----------------- */
+window.constants = {
+    baseUrl: 'https://yeneta-senior.herokuapp.com'
+};
+
 (function($){
 "use strict";
 

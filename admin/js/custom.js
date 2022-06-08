@@ -1,8 +1,16 @@
 /* ----------------- Start Document ----------------- */
+
+window.constants = {
+    baseUrl: 'https://yeneta-senior.herokuapp.com'
+};
+
 (function($){
 "use strict";
 
+
+
 $(document).ready(function(){
+	
 	
 	/*--------------------------------------------------*/
 	/*  Mobile Menu - mmenu.js

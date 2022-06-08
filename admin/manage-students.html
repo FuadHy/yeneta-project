@@ -4,7 +4,7 @@
 
 <!-- Basic Page Needs
 ================================================== -->
-<title>Yeneta - Manage Mentors</title>
+<title>Yeneta - Manage Students</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -168,8 +168,8 @@
 
 						<ul data-submenu-title="Start">
 							<li><a href="index.html"><i class="icon-material-outline-dashboard"></i> Dashboard</a></li>
-							<li class="active"><a href="manage-mentors.html"><i class="icon-material-outline-school"></i> Manage Mentors</a></li>
-							<li><a href="manage-students.html"><i class="icon-feather-user"></i> Manage Students </a></li>
+							<li><a href="manage-mentors.html"><i class="icon-material-outline-school"></i> Manage Mentors</a></li>
+							<li class="active"><a href="manage-students.html"><i class="icon-feather-user"></i> Manage Students </a></li>
 							<!-- <li><a href="#"><i class="icon-material-outline-star-border"></i> Approve</a></li> -->
 						</ul>
 
@@ -193,15 +193,15 @@
 			
 			<!-- Dashboard Headline -->
 			<div class="dashboard-headline">
-				<h3>Manage Mentors</h3>
-				<span class="margin-top-7">Registered <a href="../student/tutees.html">mentors</a></span>
+				<h3>Manage Students</h3>
+				<span class="margin-top-7">Registered <a href="#">Students</a></span>
 
 				<!-- Breadcrumbs -->
 				<nav id="breadcrumbs" class="dark">
 					<ul>
 						<li><a href="index.html">Home</a></li>
 						<li><a href="index.html">Dashboard</a></li>
-						<li>Manage Mentors</li>
+						<li>Manage Students</li>
 					</ul>
 				</nav>
 			</div>
@@ -215,11 +215,11 @@
 
 						<!-- Headline -->
 						<div class="headline">
-							<h3><i class="icon-material-outline-supervisor-account"></i> Mentors</h3>
+							<h3><i class="icon-material-outline-supervisor-account"></i> Students</h3>
 						</div>
 
 						<div class="content">
-							<ul class="dashboard-box-list" id="mentors">
+							<ul class="dashboard-box-list" id="studs">
 
 
 							</ul>
@@ -353,13 +353,13 @@ $('#snackbar-user-status label').click(function() {
 		console.log(id)
 		document.getElementById(id).style.width = 'auto'
 		document.getElementById(id).innerText = 'Deleting...'
-		fetch(window.constants.baseUrl + '/Yeneta/admin/mentor/'+id, {
+		fetch(window.constants.baseUrl + '/Yeneta/admin/student/'+id, {
 			method: 'delete'
 		}).then(d => d.json())
 		.then(d => {
 			if(d.status == 'Success'){
 				Snackbar.show({
-					text: 'Mentor deleted succcessfully!',
+					text: 'Student deleted succcessfully!',
 					pos: 'bottom-center',
 					showAction: false,
 					actionText: "Dismiss",
@@ -375,12 +375,12 @@ $('#snackbar-user-status label').click(function() {
 window.addEventListener('DOMContentLoaded', function(){
 	const urlParams = new URLSearchParams(window.location.search);
 	const id = urlParams.get('id');
-	fetch(window.constants.baseUrl + '/Yeneta/admin/mentors/')
+	fetch(window.constants.baseUrl + '/Yeneta/admin/students/')
 	.then(d => d.json())
 	.then(resp => {
 		console.log(resp)
-		let mentors = document.getElementById('mentors')
-		resp.data.mentor.forEach(_w => {
+		let studs = document.getElementById('studs')
+		resp.data.students.forEach(_w => {
 		let w = `
 			<li>
 				<!-- Overview -->
@@ -395,7 +395,7 @@ window.addEventListener('DOMContentLoaded', function(){
 
 						<!-- Name -->
 						<div class="freelancer-name">
-							<h4><a href="#">${_w.Mentor_First_Name + ' ' + _w.Mentor_Last_Name} <img class="flag" src="images/flags/au.svg" alt="" title="Australia" data-tippy-placement="top"></a></h4>
+							<h4><a href="#">${_w.Student_First_Name + ' ' + _w.Student_Last_Name} <img class="flag" src="images/flags/au.svg" alt="" title="Australia" data-tippy-placement="top"></a></h4>
 
 							<!-- Details -->
 							<span class="freelancer-detail-item"><a href="#"><i class="icon-feather-mail"></i>${_w.Email}</a></span>
@@ -411,7 +411,7 @@ window.addEventListener('DOMContentLoaded', function(){
 				</div>
 			</li>`;
 
-		mentors.innerHTML+=w;
+		studs.innerHTML+=w;
 	})
 })
 })

@@ -18,3 +18,8 @@ logout.onclick = function(e){
     localStorage.removeItem('yeneta_admin_token')
     window.location.href = 'login.html'
 }
+let l = document.getElementById('user-name')
+if(token){
+    document.getElementById('user--name').innerHTML = `${JSON.parse(localStorage.getItem('yeneta_admin')).First_Name} <span>Admin</span>`
+    if(l) l.innerHTML = `Hey, ${JSON.parse(localStorage.getItem('yeneta_admin')).First_Name}`
+}

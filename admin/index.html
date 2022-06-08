@@ -99,8 +99,8 @@
 								<!-- User Name / Avatar -->
 								<div class="user-details">
 									<div class="user-avatar status-online"><img src="images/user-avatar-small-01.jpg" alt=""></div>
-									<div class="user-name">
-										Emanuel <span>Admin</span>
+									<div class="user-name" id="user--name">
+										
 									</div>
 								</div>
 								
@@ -158,7 +158,8 @@
 
 						<ul data-submenu-title="Start">
 							<li class="active"><a href="index.html"><i class="icon-material-outline-dashboard"></i> Dashboard</a></li>
-							<li><a href="manage-mentors.html"><i class="icon-material-outline-school"></i> Manage Mentors <span class="nav-tag">2</span></a></li>
+							<li><a href="manage-mentors.html"><i class="icon-material-outline-school"></i> Manage Mentors</a></li>
+							<li><a href="manage-students.html"><i class="icon-feather-user"></i> Manage Students </a></li>
 							<!-- <li><a href="#"><i class="icon-material-outline-star-border"></i> Approve</a></li> -->
 						</ul>
                         <ul data-submenu-title="Account" style="display: none;" id="logout">
@@ -181,7 +182,7 @@
 			
 			<!-- Dashboard Headline -->
 			<div class="dashboard-headline">
-				<h3>Hey, Emanuel!</h3>
+				<h3 id="user-name"></h3>
 				<span>welcome to admin panel</span>
 
 				<!-- Breadcrumbs -->
@@ -195,24 +196,10 @@
 	
 			<!-- Fun Facts Container -->
 			<div class="fun-facts-container">
-				<div class="fun-fact" data-fun-fact-color="#36bd78">
-					<div class="fun-fact-text">
-						<span>Task Advert posted</span>
-						<h4>22</h4>
-					</div>
-					<div class="fun-fact-icon"><i class="icon-material-outline-gavel"></i></div>
-				</div>
-				<div class="fun-fact" data-fun-fact-color="#b81b7f">
-					<div class="fun-fact-text">
-						<span>Total tutor approval</span>
-						<h4>4</h4>
-					</div>
-					<div class="fun-fact-icon"><i class="icon-material-outline-business-center"></i></div>
-				</div>
 				<div class="fun-fact" data-fun-fact-color="#efa80f">
 					<div class="fun-fact-text">
 						<span>Total tutor registered</span>
-						<h4>28</h4>
+						<h4 id="pt">0</h4>
 					</div>
 					<div class="fun-fact-icon"><i class="icon-material-outline-rate-review"></i></div>
 				</div>
@@ -221,39 +208,23 @@
 				<div class="fun-fact" data-fun-fact-color="#2a41e6">
 					<div class="fun-fact-text">
 						<span>Total tutee registered</span>
-						<h4>987</h4>
+						<h4 id="tt">0</h4>
 					</div>
 					<div class="fun-fact-icon"><i class="icon-feather-trending-up"></i></div>
 				</div>
-			</div>
 			
-			<!-- Row -->
-			<div class="row">
-
-				<div class="col-xl-8">
-					<!-- Dashboard Box -->
-					<div class="dashboard-box main-box-in-row">
-						<div class="headline">
-							<h3><i class="icon-feather-bar-chart-2"></i> Tutor engagment</h3>
-							<div class="sort-by">
-								<select class="selectpicker hide-tick">
-									<option>Last 6 Months</option>
-									<option>This Year</option>
-									<option>This Month</option>
-								</select>
-							</div>
-						</div>
-						<div class="content">
-							<!-- Chart -->
-							<div class="chart">
-								<canvas id="chart" width="100" height="45"></canvas>
-							</div>
-						</div>
+				<div class="fun-fact" data-fun-fact-color="#36bd78">
+					<div class="fun-fact-text">
+						<span>Task Students registered</span>
+						<h4 id="st">0</h4>
 					</div>
-					<!-- Dashboard Box / End -->
+					<div class="fun-fact-icon"><i class="icon-material-outline-gavel"></i></div>
 				</div>
 				
-			</div>
+				
+			
+			<!-- Row -->
+			
 			<!-- Row / End -->
 
 			<!-- Row -->
@@ -359,7 +330,7 @@
 <script src="js/bootstrap-select.min.js"></script>
 <script src="js/snackbar.js"></script>
 <script src="js/clipboard.min.js"></script>
-<script src="js/counterup.min.js"></script>
+
 <script src="js/magnific-popup.min.js"></script>
 <script src="js/slick.min.js"></script>
 <script src="js/custom.js"></script>
@@ -379,81 +350,31 @@ $('#snackbar-user-status label').click(function() {
 		backgroundColor: '#383838'
 	}); 
 }); 
+
+window.addEventListener('DOMContentLoaded', function(){
+	fetch(window.constants.baseUrl + '/Yeneta/admin/status')
+	.then(d => d.json())
+	.then(resp => {
+		console.log(resp)
+		let data = resp
+		if(resp.status == "Sucess"){
+			let st = document.getElementById('st'),
+			tut = document.getElementById('tt'),
+			post = document.getElementById('pt')
+
+			tut.innerHTML = data.mentors
+			st.innerHTML = data.students
+			post.innerHTML = data.posts
+
+		}
+	})
+})
 </script>
 
 <!-- Chart.js // documentation: http://www.chartjs.org/docs/latest/ -->
 <script src="js/chart.min.js"></script>
 <script>
-	Chart.defaults.global.defaultFontFamily = "Nunito";
-	Chart.defaults.global.defaultFontColor = '#888';
-	Chart.defaults.global.defaultFontSize = '14';
 
-	var ctx = document.getElementById('chart').getContext('2d');
-
-	var chart = new Chart(ctx, {
-		type: 'line',
-
-		// The data for our dataset
-		data: {
-			labels: ["January", "February", "March", "April", "May", "June"],
-			// Information about the dataset
-	   		datasets: [{
-				label: "Views",
-				backgroundColor: 'rgba(42,65,232,0.08)',
-				borderColor: '#2a41e8',
-				borderWidth: "3",
-				data: [196,132,215,362,210,252],
-				pointRadius: 5,
-				pointHoverRadius:5,
-				pointHitRadius: 10,
-				pointBackgroundColor: "#fff",
-				pointHoverBackgroundColor: "#fff",
-				pointBorderWidth: "2",
-			}]
-		},
-
-		// Configuration options
-		options: {
-
-		    layout: {
-		      padding: 10,
-		  	},
-
-			legend: { display: false },
-			title:  { display: false },
-
-			scales: {
-				yAxes: [{
-					scaleLabel: {
-						display: false
-					},
-					gridLines: {
-						 borderDash: [6, 10],
-						 color: "#d8d8d8",
-						 lineWidth: 1,
-	            	},
-				}],
-				xAxes: [{
-					scaleLabel: { display: false },  
-					gridLines:  { display: false },
-				}],
-			},
-
-		    tooltips: {
-		      backgroundColor: '#333',
-		      titleFontSize: 13,
-		      titleFontColor: '#fff',
-		      bodyFontColor: '#fff',
-		      bodyFontSize: 13,
-		      displayColors: false,
-		      xPadding: 10,
-		      yPadding: 10,
-		      intersect: false
-		    }
-		},
-
-
-});
 
 </script>
 
