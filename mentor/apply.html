@@ -558,6 +558,7 @@ window.addEventListener('DOMContentLoaded', function(){
 			bid.innerHTML = `$${data.Minimum_Price}-$${data.Maximum_Price}`
 			bid_side.innerHTML = `$${data.Minimum_Price}-$${data.Maximum_Price}`
 			subject.innerHTML = data.Subjects
+			desc.innerHTML = data.Student.Description || 'No description.'
 			bid.location = data.Location
 			link.href = `messages.html?chatid=${data.Student}`
 

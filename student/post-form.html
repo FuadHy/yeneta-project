@@ -277,7 +277,7 @@
 								<div class="col-xl-4">
 									<div class="submit-field">
 										<h5>Subject</h5>
-										<select class="selectpicker with-border" name="sj" data-size="7" title="Select Subject" required>
+										<select class="selectpicker with-border" id="sj" name="sj" multiple data-size="7" title="Select Subject" required>
 											<option>Mathematics</option>
 											<option>Biology</option>
 											<option>Geography</option>
@@ -461,7 +461,7 @@ $('#snackbar-user-status label').click(function() {
 			Grade_level: target.gl.value,
 			Minimum_Price: target.mn.value,
 			Maximum_Price: target.mx.value,
-			Subjects: target.sj.value,
+			Subjects:  $('#sj').val().join(', '),
 			Available_Time: target.av.value,
 			Experiance: target.ex.value,
 			Location: target.loc.value,
