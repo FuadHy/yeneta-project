@@ -390,16 +390,6 @@ $('#snackbar-user-status label').click(function() {
 	}); 
 }); 
 
-window.addEventListener('DOMContentLoaded', function(){
-	const urlParams = new URLSearchParams(window.location.search);
-	const id = urlParams.get('chatid');
-	const user = JSON.parse(localStorage.getItem('yeneta_mentor'))
-	var socket = io("http://localhost:3737");
-	socket.emit('joinRoom', {id: user._id, room: id, name: user.Mentor_First_Name})
-	socket.on('message', function(msg) {
-		console.log(msg)
-	})
-})
 
 
 function sendMsg(sock, room, id){

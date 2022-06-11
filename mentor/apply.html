@@ -560,7 +560,7 @@ window.addEventListener('DOMContentLoaded', function(){
 			subject.innerHTML = data.Subjects
 			desc.innerHTML = data.Student.Description || 'No description.'
 			bid.location = data.Location
-			link.href = `messages.html?chatid=${data.Student}`
+			link.href = `messages.html?chatid=${data.Student._id}`
 
 		} else window.location.assign('tutees.html')
 	})
